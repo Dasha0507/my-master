@@ -1,0 +1,29 @@
+
+
+footer {
+    background: #3F1E00;
+  }
+  
+  .footer-information {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .coopirate {
+    color: #FFF4DB;
+  }
+  
+  .contacts {
+    color: #FFF4DB;
+  }
+  
+  .contacts > p {
+    margin-bottom: 10px;
+    color: #FFF4DB;
+  }
+  
+  .contacts > p > a {
+    color: #FFF4DB;
+  }
