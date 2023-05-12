@@ -15,6 +15,8 @@ import {
 } from "firebase/firestore";
 import database from './config';
 import ArticleList from './components/article-list/article-list';
+import ArticleCard from './components/article-card/article-card';
+import SinglePade from './pages/main/SinglePage';
 
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
 
   useEffect( ()=>{
    getArticles().then((data) => console.log(data));
-  })
+  }, [])
   return (
     <div className="App">
       <Header/>
@@ -40,9 +42,8 @@ function App() {
             </Fragment>
           }
         />
-        <Route path='/articles' element={
-          <ArticleList/>
-        }/>
+        <Route path='/articles' element={<ArticleList/>}/>
+        <Route path='/articles/:title' element={<SinglePade/>}/>
       </Routes>
       <Footer/>
     </div>

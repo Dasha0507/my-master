@@ -1,5 +1,6 @@
 import React from 'react';
 import './article-card.css';
+// import { useParams } from 'react-router-dom';
 
 function ArticleCard({title, shortDesc, imgUrl}) {
 
