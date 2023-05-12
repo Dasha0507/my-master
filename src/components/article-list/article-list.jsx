@@ -13,16 +13,18 @@ function ArticleList(props) {
     const [articlesList, setArticles] = useState([]);
     const dbArticlesRef = collection(database, "articles");
 
-
-    useEffect(async () => {
+    const fetchDataList = async () => {
         const qArticles = query(dbArticlesRef)
         const dataArticles = await getDocs(qArticles)
         // const data = await dbArticlesRef.getDocs();
         dataArticles.docs.forEach(item => {
             setArticles([...articlesList,item.data()])
         })
-        // return () => {}
-    }, []);
+     }
+     useEffect( () => {
+        fetchDataList();
+     }, []);
+ 
 
 
     return (
