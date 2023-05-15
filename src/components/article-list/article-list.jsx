@@ -4,25 +4,18 @@ import ArticleCard from '../article-card/article-card';
 import database from '../../config';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { Link } from 'react-router-dom';
-// import { useParams } from 'react-router-dom';
-
-
 
 function ArticleList(props) {
-    // const {title} = useParams();    
     const [articlesList, setArticles] = useState([]);
     const dbArticlesRef = collection(database, "articles");
 
     const fetchDataList = async () => {
-        const qArticles = query(dbArticlesRef)
-        const dataArticles = await getDocs(qArticles)
-        // const data = await dbArticlesRef.getDocs();
-        dataArticles.docs.forEach(item => {
-            setArticles([...articlesList,item.data()])
-        })
+        const dataArticles = await getDocs(dbArticlesRef)
+        console.log("Articles-list ", dataArticles);
+        return dataArticles.docs.map((doc) => ({...doc.data()}))
      }
      useEffect( () => {
-        fetchDataList();
+        fetchDataList().then((res)=> {setArticles(res)});
      }, []);
  
 

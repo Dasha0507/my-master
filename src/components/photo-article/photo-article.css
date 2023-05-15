@@ -1,0 +1,19 @@
+
+.article-photo {
+
+}
+
+.article-photo > img {
+  border-radius: 10px 10px 0 0;
+}
+
+.article-information {
+  padding: 15px;
+}
+
+.photo-desc { 
+    font-size: 16px;
+    color: #111111;
+    font-weight: 700;
+}
+  
